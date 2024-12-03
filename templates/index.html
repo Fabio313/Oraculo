@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Oráculo - Protótipo</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Oráculo - IA para Regras de Negócio</h1>
+        <form method="POST">
+            <label for="question">Pergunta:</label><br>
+            <input type="text" id="question" name="question" required><br>
+            <button type="submit">Perguntar</button>
+        </form>
+        {% if answer %}
+            <h2>Resposta:</h2>
+            <p>{{ answer }}</p>
+        {% endif %}
+    </div>
+    <div class="container">
+        <h1>Adicionar regra</h1>
+        <form action="/update_context" method="POST">
+            <label for="new_rule">Nova Regra de Negócio:</label><br>
+            <textarea id="new_rule" name="new_rule" rows="4" required></textarea><br>
+            <button type="submit">Adicionar Regra</button>
+        </form>
+    </div>
+</body>
+</html>
